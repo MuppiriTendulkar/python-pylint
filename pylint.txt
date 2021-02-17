@@ -1,0 +1,36 @@
+pylint:
+
+    code linter is a program that inspects the python code, and give feedback on your pythoncode and also it will tell you how to resolve this.
+
+when you execute pylint <filename>, you will get/see the following type of errors
+
+    C:(convention/code style) for programming standard violation
+    R:(refactor) for bad code smell
+    W:(warning)  for python specific problems
+    E:(error) for much probably bugs in the code
+    F:(fatal) if an error occurred which prevented pylint from doing further processing.
+
+  --> wrong import postion(In python, the modules should be placed in begining of the program)
+  --> bad-whitespace
+      example:
+              (a=10)
+  -->missing-function-docstring
+      example: """ ..........................."""
+        the above represents the docstring, in below every function there should be a docstring
+  -->bad-continuation(there should not be any spaces)
+      example:
+        sg_client = boto3.client('ec2', aws_access_key_id=credentials['AccessKeyId'],
+                                    aws_secret_access_key=credentials['SecretAccessKey'],
+                                    aws_session_token=credentials['SessionToken']
+                                )
+        sg_client = boto3.client('ec2', aws_access_key_id=credentials['AccessKeyId'],aws_secret_access_key=credentials['SecretAccessKey'],aws_session_token=credentials['SessionToken'])
+  --> you can find all the error details in below link
+
+
+>we can generate pylint configrations using the below command
+  pylint --generate-rcfile > ~/.pylintrc
+
+>you can fix few errors or bugs by configuring the pylintrc file  
+
+>refer the below link for the error details
+  https://learn.adafruit.com/improve-your-code-with-pylint/pylint-errors
