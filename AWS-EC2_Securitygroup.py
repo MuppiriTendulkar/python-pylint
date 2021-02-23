@@ -80,7 +80,7 @@ def evaluate_compliance_item_Change(event, credentials, configuration_item):
 
 def remediate(finding, credentials):
     if finding['Compliance']['Status'] == 'NOT_AVAILABLE':
-        log.debug(f"There is nothing to do for this finding")
+        log.debug("There is nothing to do for this finding")
         return True
     sg_client = boto3.client('ec2', aws_access_key_id=credentials['AccessKeyId'],
                                     aws_secret_access_key=credentials['SecretAccessKey'],
