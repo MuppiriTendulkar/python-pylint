@@ -73,7 +73,7 @@ def evaluate_replication_instances(event, dms_client):
 
 def remediate(finding, credentials):
     if finding['Compliance']['Status'] == 'NOT_AVAILABLE':
-        log.debug(f"There is nothing to do for this finding")
+        log.debug("There is nothing to do for this finding")
         return True
     dms_client = boto3.client('dms', aws_access_key_id=credentials['AccessKeyId'],
                                     aws_secret_access_key=credentials['SecretAccessKey'],
